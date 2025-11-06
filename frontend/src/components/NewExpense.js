@@ -53,7 +53,7 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
 // Configure axios
-axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL || 'https://tadasedl.vercel.app/';
+axios.defaults.baseURL = 'http://172.26.0.217:8000';
 
 // Format date as YYYY-MM-DD for backend/database
 const formatDate = (date) => {
@@ -2867,14 +2867,13 @@ const NewExpense = ({
                                         return URL.createObjectURL(formData[type]);
                                       }
                                       // For edit mode, use backend path
-                                      const BACKEND_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000';
                                       let path = type === 'travelReceipt' ? (localTravelReceiptPath || travelReceiptPath) : localHotelReceiptPath;
                                       if (!path) return '#';
                                       path = path.replace(/\\/g, '/');
                                       if (path.startsWith('http')) return path;
-                                      if (path.startsWith('/uploads/')) return `${BACKEND_BASE_URL}${path}`;
-                                      if (path.startsWith('uploads/')) return `${BACKEND_BASE_URL}/${path}`;
-                                      return `${BACKEND_BASE_URL}/uploads/${path}`;
+                                      if (path.startsWith('/uploads/')) return `http://172.26.0.217:8000${path}`;
+                                      if (path.startsWith('uploads/')) return `http://172.26.0.217:8000/${path}`;
+                                      return `http://172.26.0.217:8000/uploads/${path}`;
                                     })()}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -2942,14 +2941,13 @@ const NewExpense = ({
                                       return URL.createObjectURL(formData.foodReceipt);
                                     }
                                     // For edit mode, use backend path
-                                    const BACKEND_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000';
                                     let path = localFoodReceiptPath;
                                     if (!path) return '#';
                                     path = path.replace(/\\/g, '/');
                                     if (path.startsWith('http')) return path;
-                                    if (path.startsWith('/uploads/')) return `${BACKEND_BASE_URL}${path}`;
-                                    if (path.startsWith('uploads/')) return `${BACKEND_BASE_URL}/${path}`;
-                                    return `${BACKEND_BASE_URL}/uploads/${path}`;
+                                    if (path.startsWith('/uploads/')) return `http://172.26.0.217:8000${path}`;
+                                    if (path.startsWith('uploads/')) return `http://172.26.0.217:8000/${path}`;
+                                    return `http://172.26.0.217:8000/uploads/${path}`;
                                   })()}
                                   target="_blank"
                                   rel="noopener noreferrer"
@@ -3023,15 +3021,14 @@ const NewExpense = ({
                               <Typography variant="caption" sx={{ ml: 2 }}>
                                 <a
                                   href={(() => {
-                                    const BACKEND_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000';
                                     let path = localSpecialApprovalPath;
                                     if (!path && specialApprovalFileName) return '#';
                                     if (!path) return '#';
                                     path = path.replace(/\\/g, '/');
                                     if (path.startsWith('http')) return path;
-                                    if (path.startsWith('/uploads/')) return `${BACKEND_BASE_URL}${path}`;
-                                    if (path.startsWith('uploads/')) return `${BACKEND_BASE_URL}/${path}`;
-                                    return `${BACKEND_BASE_URL}/uploads/${path}`;
+                                    if (path.startsWith('/uploads/')) return `http://172.26.0.217:8000${path}`;
+                                    if (path.startsWith('uploads/')) return `http://172.26.0.217:8000/${path}`;
+                                    return `http://172.26.0.217:8000/uploads/${path}`;
                                   })()}
                                   target="_blank"
                                   rel="noopener noreferrer"

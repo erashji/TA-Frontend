@@ -87,7 +87,7 @@ const statusColors = {
 };
 
 // Configure axios
-axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL || 'https://tadasedl.vercel.app/';
+axios.defaults.baseURL = 'http://172.26.0.217:8000';
 
 // Add this helper function before any other code
 
@@ -618,7 +618,7 @@ const exportToExcel = async (data, filterStatus, allEmployees) => {
           sharing: '',
           location: `${travel.from_location} → ${travel.to_location}`,
           receipt: expense.travel_receipt_path
-            ? `${process.env.REACT_APP_API_BASE_URL}/${expense.travel_receipt_path.replace(/\\/g, '/')}`
+            ? `http://172.26.0.217:8000/${expense.travel_receipt_path.replace(/\\/g, '/')}`
             : ''
         });
       });
@@ -681,7 +681,7 @@ const exportToExcel = async (data, filterStatus, allEmployees) => {
           sharing: hotel.sharing,
           location: hotel.location,
           receipt: expense.hotel_receipt_path
-            ? `${process.env.REACT_APP_API_BASE_URL}/${expense.hotel_receipt_path.replace(/\\/g, '/')}`
+            ? `http://172.26.0.217:8000/${expense.hotel_receipt_path.replace(/\\/g, '/')}`
             : ''
         });
       });
@@ -711,7 +711,7 @@ const exportToExcel = async (data, filterStatus, allEmployees) => {
           sharing: food.sharing,
           location: food.location,
           receipt: expense.food_receipt_path
-            ? `${process.env.REACT_APP_API_BASE_URL}/${expense.food_receipt_path.replace(/\\/g, '/')}`
+            ? `http://172.26.0.217:8000/${expense.food_receipt_path.replace(/\\/g, '/')}`
             : ''
         });
       });
@@ -739,7 +739,7 @@ const exportToExcel = async (data, filterStatus, allEmployees) => {
         amount: '',
         sharing: '',
         location: '',
-        receipt: `${process.env.REACT_APP_API_BASE_URL}/${expense.special_approval_path.replace(/\\/g, '/')}`
+        receipt: `http://172.26.0.217:8000/${expense.special_approval_path.replace(/\\/g, '/')}`
       });
     }
     // Calculate totals
@@ -2073,10 +2073,10 @@ const formatCreatedDate = (date) => {
     // Uploaded Receipts
     addSectionHeader('Uploaded Receipts');
     const receiptRows = [];
-    if (selectedExpense.travel_receipt_path) receiptRows.push(['Travel Receipt', `${process.env.REACT_APP_API_BASE_URL}/${selectedExpense.travel_receipt_path.replace(/\\/g, '/')}`]);
-    if (selectedExpense.hotel_receipt_path) receiptRows.push(['Hotel Receipt', `${process.env.REACT_APP_API_BASE_URL}/${selectedExpense.hotel_receipt_path.replace(/\\/g, '/')}`]);
-    if (selectedExpense.food_receipt_path) receiptRows.push(['Food Receipt', `${process.env.REACT_APP_API_BASE_URL}/${selectedExpense.food_receipt_path.replace(/\\/g, '/')}`]);
-    if (selectedExpense.special_approval_path) receiptRows.push(['Special Approval', `${process.env.REACT_APP_API_BASE_URL}/${selectedExpense.special_approval_path.replace(/\\/g, '/')}`]);
+    if (selectedExpense.travel_receipt_path) receiptRows.push(['Travel Receipt', `http://172.26.0.217:8000/${selectedExpense.travel_receipt_path.replace(/\\/g, '/')}`]);
+    if (selectedExpense.hotel_receipt_path) receiptRows.push(['Hotel Receipt', `http://172.26.0.217:8000/${selectedExpense.hotel_receipt_path.replace(/\\/g, '/')}`]);
+    if (selectedExpense.food_receipt_path) receiptRows.push(['Food Receipt', `http://172.26.0.217:8000/${selectedExpense.food_receipt_path.replace(/\\/g, '/')}`]);
+    if (selectedExpense.special_approval_path) receiptRows.push(['Special Approval', `http://172.26.0.217:8000/${selectedExpense.special_approval_path.replace(/\\/g, '/')}`]);
     if (receiptRows.length > 0) {
       addTable(['Type', 'Receipt Link'], receiptRows);
     }
@@ -3029,7 +3029,7 @@ const formatCreatedDate = (date) => {
                                 size="small"
                                 sx={{ mt: 1 }}
                                 onClick={() => {
-                                  const url = `${process.env.REACT_APP_API_BASE_URL}/${receipt.path.replace(/\\/g, '/')}`;
+                                  const url = `http://172.26.0.217:8000/${receipt.path.replace(/\\/g, '/')}`;
                                   window.open(url, '_blank');
                                 }}
                               >

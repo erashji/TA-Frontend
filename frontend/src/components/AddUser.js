@@ -55,14 +55,12 @@ const AddUser = () => {
     headers: { Authorization: `Bearer ${token}` }
   }), [token]);
 
-  const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;
-
   // Fetch employees without user accounts
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${API_BASE_URL}/api/admin/employees-without-users`, config);
+        const response = await axios.get('http://172.26.0.217:8000/api/admin/employees-without-users', config);
         setEmployees(response.data);
       } catch (error) {
         console.error('Error fetching employees:', error);
@@ -153,7 +151,7 @@ const AddUser = () => {
       };
 
       await axios.post(
-        `${API_BASE_URL}/api/admin/users`,
+        'http://172.26.0.217:8000/api/admin/users',
         userData,
         config
       );
@@ -174,7 +172,7 @@ const AddUser = () => {
       
       // Refresh employee list
       if (token) {
-        const updatedResponse = await axios.get(`${API_BASE_URL}/api/admin/employees-without-users`, config);
+        const updatedResponse = await axios.get('http://172.26.0.217:8000/api/admin/employees-without-users', config);
         setEmployees(updatedResponse.data);
       }
     } catch (error) {

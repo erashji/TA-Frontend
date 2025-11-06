@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+const getBaseUrl = () => {
+  // Replace with your backend server's IP address
+  const serverIP = window.location.hostname === '172.26.0.217' ? '172.26.0.217' : '172.26.0.217';
+  return `http://${serverIP}:8000`;
+};
+
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL, // Use backend API URL from .env
+  baseURL: getBaseUrl(),
   headers: {
     'Content-Type': 'application/json',
     'x-jwt-token': '35d854a97f22d7b32ddd279642f22586a62a4788ae4f9850abe342875244862a'  // Add default token
