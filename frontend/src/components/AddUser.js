@@ -60,7 +60,7 @@ const AddUser = () => {
     const fetchEmployees = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://172.26.0.217:8000/api/admin/employees-without-users', config);
+        const response = await axios.get('https://claimbackend-pi.vercel.app/api/admin/employees-without-users', config);
         setEmployees(response.data);
       } catch (error) {
         console.error('Error fetching employees:', error);
@@ -151,7 +151,7 @@ const AddUser = () => {
       };
 
       await axios.post(
-        'http://172.26.0.217:8000/api/admin/users',
+        'https://claimbackend-pi.vercel.app/api/admin/users',
         userData,
         config
       );
@@ -172,7 +172,7 @@ const AddUser = () => {
       
       // Refresh employee list
       if (token) {
-        const updatedResponse = await axios.get('http://172.26.0.217:8000/api/admin/employees-without-users', config);
+        const updatedResponse = await axios.get('https://claimbackend-pi.vercel.app/api/admin/employees-without-users', config);
         setEmployees(updatedResponse.data);
       }
     } catch (error) {

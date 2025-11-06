@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const getBaseUrl = () => {
   // Replace with your backend server's IP address
-  const serverIP = window.location.hostname === '172.26.0.217' ? '172.26.0.217' : '172.26.0.217';
-  return `http://${serverIP}:8000`;
+  const serverIP = 'claimbackend-pi.vercel.app';
+  return `https://${serverIP}`;
 };
 
 const api = axios.create({

@@ -53,7 +53,7 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
 // Configure axios
-axios.defaults.baseURL = 'http://172.26.0.217:8000';
+axios.defaults.baseURL = 'https://claimbackend-pi.vercel.app';
 
 // Format date as YYYY-MM-DD for backend/database
 const formatDate = (date) => {
@@ -2871,9 +2871,9 @@ const NewExpense = ({
                                       if (!path) return '#';
                                       path = path.replace(/\\/g, '/');
                                       if (path.startsWith('http')) return path;
-                                      if (path.startsWith('/uploads/')) return `http://172.26.0.217:8000${path}`;
-                                      if (path.startsWith('uploads/')) return `http://172.26.0.217:8000/${path}`;
-                                      return `http://172.26.0.217:8000/uploads/${path}`;
+                                      if (path.startsWith('/uploads/')) return `https://claimbackend-pi.vercel.app${path}`;
+                                      if (path.startsWith('uploads/')) return `https://claimbackend-pi.vercel.app/${path}`;
+                                      return `https://claimbackend-pi.vercel.app/uploads/${path}`;
                                     })()}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -2945,9 +2945,9 @@ const NewExpense = ({
                                     if (!path) return '#';
                                     path = path.replace(/\\/g, '/');
                                     if (path.startsWith('http')) return path;
-                                    if (path.startsWith('/uploads/')) return `http://172.26.0.217:8000${path}`;
-                                    if (path.startsWith('uploads/')) return `http://172.26.0.217:8000/${path}`;
-                                    return `http://172.26.0.217:8000/uploads/${path}`;
+                                    if (path.startsWith('/uploads/')) return `https://claimbackend-pi.vercel.app${path}`;
+                                    if (path.startsWith('uploads/')) return `https://claimbackend-pi.vercel.app/${path}`;
+                                    return `https://claimbackend-pi.vercel.app/uploads/${path}`;
                                   })()}
                                   target="_blank"
                                   rel="noopener noreferrer"
@@ -3026,9 +3026,9 @@ const NewExpense = ({
                                     if (!path) return '#';
                                     path = path.replace(/\\/g, '/');
                                     if (path.startsWith('http')) return path;
-                                    if (path.startsWith('/uploads/')) return `http://172.26.0.217:8000${path}`;
-                                    if (path.startsWith('uploads/')) return `http://172.26.0.217:8000/${path}`;
-                                    return `http://172.26.0.217:8000/uploads/${path}`;
+                                    if (path.startsWith('/uploads/')) return `https://claimbackend-pi.vercel.app${path}`;
+                                    if (path.startsWith('uploads/')) return `https://claimbackend-pi.vercel.app/${path}`;
+                                    return `https://claimbackend-pi.vercel.app/uploads/${path}`;
                                   })()}
                                   target="_blank"
                                   rel="noopener noreferrer"

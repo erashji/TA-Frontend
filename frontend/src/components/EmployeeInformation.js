@@ -10,7 +10,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import { formatDisplayDate } from './NewExpense';
 import axios from 'axios';
 
-const BASE_URL = 'http://172.26.0.217:8000/';
+const BASE_URL = 'https://claimbackend-pi.vercel.app/';
 
 const InfoCard = ({ icon, title, value, chip, sx }) => (
   <Paper 

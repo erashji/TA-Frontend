@@ -99,7 +99,7 @@ const DashboardHome = () => {
   const [openEmpInfo, setOpenEmpInfo] = useState(false);
   const [openChangePass, setOpenChangePass] = useState(false);
 
-  const BASE_URL = 'http://172.26.0.217:8000/';
+  const BASE_URL = 'https://claimbackend-pi.vercel.app/';
 
   const handleLogout = () => {
     logout();
